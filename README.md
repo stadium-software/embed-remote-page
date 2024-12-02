@@ -1,8 +1,8 @@
-# Embed Remote Page <!-- omit in toc -->
+# Embed Remote Page
 
-Description
+Embed a remote page in a Stadium page
 
-Video / screenshot
+![](images/view.gif)
 
 # Version
 Initial 1.0
