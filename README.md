@@ -1,6 +1,6 @@
 # Embed Remote Page
 
-Embed a remote page in a Stadium page
+Embed a remote page in an iFrame on a Stadium page
 
 ![](images/view.gif)
 
