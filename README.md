@@ -83,7 +83,7 @@ In most cases, it is necessary to add an entry in the 'Content Security Policy' 
 
 ![](images/SAMHttpHeaders.png)
 
-The default configuration for the 'Content Security Policy' contains the entries below. To enable loading an external page in an iFrame, it is necessary to add "frame-src 'self'" and the url you wish to enable to the end of this string. 
+The default configuration for the 'Content Security Policy' contains the entries below. To enable loading an external page in an iFrame, it is necessary to add "frame-src 'self'" and the url you wish to enable to this string. 
 
 **Example for enabling PowerBI to load in an iFrame**
 
