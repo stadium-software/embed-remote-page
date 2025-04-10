@@ -1,6 +1,6 @@
 # Embed Remote Page
 
-Embed a remote page in an iFrame on a Stadium page
+Embed a remote page in an iFrame on a Stadium page. When publishing an application, you may need to amend the application [Content Security Policy](#content-security-policy) to prevent external pages from being blocked. 
 
 ![](images/view.gif)
 
@@ -18,7 +18,7 @@ Initial 1.0
    1. ContainerClass
    2. RemoteUrl
 3. Drag a *JavaScript* action into the script
-4. Add the Javascript below into the JavaScript code property
+4. Add the Javascript below unchanged into the JavaScript code property
 ```javascript
 /* Stadium Script v1.0 https://github.com/stadium-software/embed-remote-page */
 let containerClass = ~.Parameters.Input.ContainerClass;
@@ -74,6 +74,27 @@ Example:
 	height: calc(100vh - 150px);
 	width: calc(100vw - 150px);
 }
+```
+
+## Content Security Policy
+In most cases, it is necessary to add an entry in the 'Content Security Policy' in the application 'HTTP Headers' to prevent external page downloads from being blocked in the browser. This can be achieved by adding an entry in the Application Properties in the Stadium Designer or in the Stadium Application Manager after publishing the application. 
+
+![](images/HTTPHeaders.png)
+
+![](images/SAMHttpHeaders.png)
+
+The default configuration for the 'Content Security Policy' contains the entries below. To enable loading an external page in an iFrame, it is necessary to add "frame-src 'self'" and the url you wish to enable to the end of this string. 
+
+Default Content Security Policy
+
+```text
+default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-eval' https://code.jquery.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self' https://*.okta.com https://*.auth0.com https://accounts.google.com https://www.googleapis.com/oauth2/v3/certs https://openidconnect.googleapis.com/v1/userinfo https://login.microsoftonline.com https://graph.microsoft.com;
+```
+
+Example for enabling PowerBI to load in an iFrame
+
+```text
+default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-eval' https://code.jquery.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self' https://*.okta.com https://*.auth0.com https://accounts.google.com https://www.googleapis.com/oauth2/v3/certs https://openidconnect.googleapis.com/v1/userinfo https://login.microsoftonline.com https://graph.microsoft.com; frame-src 'self' https://app.powerbi.com
 ```
 
 ## Working with Stadium Repos
