@@ -85,10 +85,6 @@ In most cases, it is necessary to add an entry in the 'Content Security Policy' 
 
 The default configuration for the 'Content Security Policy' contains the entries below. To enable loading an external page in an iFrame, it is necessary to add "frame-src 'self'" and the url you wish to enable to the end of this string. 
 
-**Default Content Security Policy**
-
-`default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-eval' https://code.jquery.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self' https://*.okta.com https://*.auth0.com https://accounts.google.com https://www.googleapis.com/oauth2/v3/certs https://openidconnect.googleapis.com/v1/userinfo https://login.microsoftonline.com https://graph.microsoft.com;`
-
 **Example for enabling PowerBI to load in an iFrame**
 
 `default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-eval' https://code.jquery.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self' https://*.okta.com https://*.auth0.com https://accounts.google.com https://www.googleapis.com/oauth2/v3/certs https://openidconnect.googleapis.com/v1/userinfo https://login.microsoftonline.com https://graph.microsoft.com; frame-src 'self' https://app.powerbi.com`
